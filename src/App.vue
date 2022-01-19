@@ -1,9 +1,19 @@
+<script>
+import Header from "./components/Header/index.vue";
+export default {
+  name: "App",
+  components: {
+    Header
+  }
+};
+</script>
+
+
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <router-view />
+  <Header msg="Spectral Front-End Assignment"/>
+  <main>
+    <router-view></router-view>
+  </main>
 </template>
 
 <style>
