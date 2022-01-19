@@ -1,18 +1,20 @@
+
+<script setup>
+
+</script>
+
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    please select an asset from the sidebar in order to see relevant data here.
   </div>
 </template>
 
-<script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+<style scoped>
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+</style>
 
-export default {
-  name: "Home",
-  components: {
-    HelloWorld,
-  },
-};
-</script>
