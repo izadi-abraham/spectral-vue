@@ -1,9 +1,17 @@
 <script>
 import Header from "./components/Header/index.vue";
+import SideBar from "./components/SideBar/index.vue";
+import assets from "./data/assets.json";
 export default {
   name: "App",
   components: {
-    Header
+    Header,
+    SideBar,
+  },
+  setup() {
+    return {
+      assets,
+    }
   }
 };
 </script>
@@ -12,6 +20,7 @@ export default {
 <template>
   <Header msg="Spectral Front-End Assignment"/>
   <main>
+    <SideBar :data="assets"/>
     <router-view></router-view>
   </main>
 </template>
