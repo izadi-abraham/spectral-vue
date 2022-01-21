@@ -25,7 +25,7 @@ export default {
   <div v-for="item in node" :key="item.id">
     <div class="sidebar__item">
       <span class="sidebar__item-toggle" v-if="item.child && item.child.length" @click="toggle()">{{ isOpen ? '-' : '+' }}</span>
-      <router-link :to="{name: 'About', params: {id: item.id}}" :name="item.name">{{ item.name }}</router-link>
+      <router-link :to="{name: 'Page', params: {id: item.id}}" :name="item.name">{{ item.name }}</router-link>
     </div>
     <SideBarNode v-if="item.child && item.child.length && isOpen" :node="item.child"/>
   </div>
