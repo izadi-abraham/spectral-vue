@@ -2,7 +2,7 @@
   <div class="sidebar">
     <aside>
       <nav class="sidebar__content" role="navigation">
-        <SideBarNode :node="tree"></SideBarNode>
+        <SideBarNode :node="menuItemsTree"></SideBarNode>
       </nav>
     </aside>
   </div>
@@ -10,7 +10,7 @@
 
 <script>
 
-import SideBarNode from "../SidebarNode";
+import SideBarNode from "../SidebarNode/index.vue";
 
 export default {
   name: "SideBar",
@@ -18,33 +18,13 @@ export default {
     SideBarNode
   },
   props: {
-    data: {
+    menuItemsTree: {
       type: Array,
       required: true
     }
   },
   setup(props) {
-    const convertToTree = (menuItems) => {
-      let output = [], magicArr = [{array: output, id: 0}]
-      for (let item of menuItems) {
-        if (item.parentId === null)
-          item.parentId = 0
-        let index = magicArr.findIndex(magic => {
-          return magic.id === item.parentId
-        })
-        if (!Array.isArray(magicArr[index].array)) {
-          magicArr[index].array = magicArr[index].array.child = []
-        }
-        let nv = Object.assign({}, item)
-        magicArr[index].array.push(nv)
-        magicArr[++index] = {array: nv, id: item.id}
-      }
-      return output
-    }
-    const tree = convertToTree(props.data)
-    return {
-      tree
-    };
+
   },
 }
 </script>

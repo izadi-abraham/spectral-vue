@@ -25,7 +25,7 @@ export default {
         type: 'line',
       },
       title: {
-        text: 'Number of project stars',
+        text: '',
       },
       xAxis: {
         categories: categories,
