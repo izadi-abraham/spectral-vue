@@ -16,7 +16,7 @@ export default {
     getData() {
       const route = useRoute()
       const values = api.getMeasurements(Number(route.params.id));
-      console.log('values', values);
+      console.log(values);
       return values
     }
 },
