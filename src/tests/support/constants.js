@@ -1,4 +1,4 @@
-import assets from "../../data/assets.json"
+import assets from "../../data/localData/assets.json"
 
 
 export const defaultAssets = assets
@@ -93,6 +93,72 @@ export const assetsSet1Tree = [
   },
 
 ]
+export const measurementsSet1 = [
+  {
+    "assetId": 3,
+    "measurements": {
+      "2020-01-01T00:00:00.000Z": 156,
+      "2020-02-01T00:00:00.000Z": 123,
+      "2020-03-01T00:00:00.000Z": 128,
+    }
+  },
+  {
+    "assetId": 4,
+    "measurements": {
+      "2020-01-01T00:00:00.000Z": 141,
+      "2020-02-01T00:00:00.000Z": 125,
+      "2020-03-01T00:00:00.000Z": 113,
+    }
+  },
+  {
+    "assetId": 8,
+    "measurements": {
+      "2020-01-01T00:00:00.000Z": 142,
+      "2020-02-01T00:00:00.000Z": 164,
+      "2020-03-01T00:00:00.000Z": 112,
+    }
+  }
+]
+
+
+export const values1 = {
+    "meterReadings": {
+      "2020-01-01T00:00:00.000Z": 156 + 141 + 142,
+      "2020-02-01T00:00:00.000Z": 123 + 125 + 164,
+      "2020-03-01T00:00:00.000Z": 128 + 113 + 112,
+    },
+    "aggregated": true
+  }
+export const values2 = {
+    "meterReadings": {
+      "2020-01-01T00:00:00.000Z": 156 + 141,
+      "2020-02-01T00:00:00.000Z": 123 + 125,
+      "2020-03-01T00:00:00.000Z": 128 + 113,
+    },
+    "aggregated": true
+  }
+export const values8 = {
+    "meterReadings": {
+      "2020-01-01T00:00:00.000Z": 142,
+      "2020-02-01T00:00:00.000Z": 164,
+      "2020-03-01T00:00:00.000Z": 112,
+    },
+    "aggregated": false
+  }
+export const values3 = {
+  "meterReadings": {
+    "2020-01-01T00:00:00.000Z": 156,
+    "2020-02-01T00:00:00.000Z": 123,
+    "2020-03-01T00:00:00.000Z": 128,
+  },
+  "aggregated": false
+}
+
+export const errorValues = {
+  "meterReadings": {},
+  "aggregated": false,
+  "error": "not found"
+}
 
 export const measurements1 = {
     "meterReadings": {
@@ -144,9 +210,4 @@ export const measurements4 = {
     "2020-11-01T00:00:00.000Z": 110,
     "2020-12-01T00:00:00.000Z": 168
   }
-}
-export const measurementsError = {
-  "meterReadings": {},
-  "aggregated": false,
-  "error": "not found"
 }

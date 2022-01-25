@@ -10,6 +10,14 @@ export default {
     categories: {
       type: Array,
     },
+    chartTitle: {
+      type: String,
+      default: 'test'
+    },
+    yAxisTitle: {
+      type: String,
+      default: ''
+    }
   },
   components: {
     Chart,
@@ -25,19 +33,19 @@ export default {
         type: 'line',
       },
       title: {
-        text: '',
+        text: chartTitle,
       },
       xAxis: {
         categories: categories,
       },
       yAxis: {
         title: {
-          text: 'Number of stars',
+          text: yAxisTitle,
         },
       },
       series: [
         {
-          name: 'New project stars',
+          name: '',
           data: seriesData,
         },
       ],

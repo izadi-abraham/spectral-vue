@@ -1,5 +1,5 @@
-import assets from './assets.json'
-import measurements from './measurements.json'
+import assets from '../localData/assets.json'
+import measurements from '../localData/measurements.json'
 
 
 class LocalDataRepository {

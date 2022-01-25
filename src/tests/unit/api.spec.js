@@ -1,31 +1,34 @@
-import { api } from "../../data/Api";
 import {
-  defaultAssetsTree,
   assetsSet1Tree,
   assetsSet1,
-  measurements0,
-  measurements1,
-  measurements4,
-  measurementsError
+  errorValues, measurementsSet1, values1, values2, values3, values8
 } from "../support/constants";
+import { Api } from '../../data/Api'
 
 
 
+class MockDataRepository {
+  getAssets() {
+    return assetsSet1
+  }
+  getMeasurements() {
+    return measurementsSet1
+  }
+}
 
 
+const mockApi = new Api(new MockDataRepository())
 
 describe("api functions", () => {
-  it("getAssetsTree returns assets tree", () => {
-    expect(api.getAssetsTree()).toStrictEqual(defaultAssetsTree);
+  it("getAssetsTree returns expected tree", () => {
+    expect(mockApi.getAssetsTree()).toStrictEqual(assetsSet1Tree);
   });
-  // it("returns when passed", () => {
-  //   expect(api.getAssetsTree(assetsSet1)).toStrictEqual(assetsSet1Tree);
-  // });
-  it("getMeasurements function returns relevant values", () => {
-    expect(api.getMeasurements(1)).toStrictEqual(measurements1);
-    expect(api.getMeasurements(0)).toStrictEqual(measurements0);
-    expect(api.getMeasurements(4)).toStrictEqual(measurements4);
-    expect(api.getMeasurements(Math.floor(Math.random() * 100) + 5)).toStrictEqual(measurementsError);
+  it("getMeasurements function returns expected values", () => {
+    expect(mockApi.getMeasurements(1)).toStrictEqual(values1);
+    expect(mockApi.getMeasurements(2)).toStrictEqual(values2);
+    expect(mockApi.getMeasurements(3)).toStrictEqual(values3);
+    expect(mockApi.getMeasurements(8)).toStrictEqual(values8);
+    expect(mockApi.getMeasurements(Math.floor(Math.random() * 100) + 5)).toStrictEqual(errorValues);
   });
 
 });

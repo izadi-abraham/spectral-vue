@@ -2,7 +2,7 @@
   <div class="sidebar">
     <aside>
       <nav class="sidebar__content" role="navigation">
-        <SideBarNode :node="menuItemsTree"></SideBarNode>
+        <SidebarNode :tree="menuItemsTree"></SidebarNode>
       </nav>
     </aside>
   </div>
@@ -10,21 +10,18 @@
 
 <script>
 
-import SideBarNode from "../SidebarNode/index.vue";
+import SidebarNode from "../SidebarNode/index.vue";
 
 export default {
-  name: "SideBar",
+  name: "Sidebar",
   components: {
-    SideBarNode
+    SidebarNode
   },
   props: {
     menuItemsTree: {
       type: Array,
       required: true
     }
-  },
-  setup(props) {
-
   },
 }
 </script>

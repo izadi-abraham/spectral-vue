@@ -1,15 +1,17 @@
 <script>
 import Header from "./components/Header/index.vue";
-import SideBar from "./components/SideBar/index.vue";
+import Sidebar from "./components/Sidebar/index.vue";
 import { api } from "./data/Api";
+import store from "./store";
 
 export default {
   name: "App",
+  store: store,
   components: {
     Header,
-    SideBar
+    Sidebar: Sidebar
   },
-  setup(props) {
+  setup() {
    const tree = api.getAssetsTree()
     return {
      tree
@@ -22,7 +24,7 @@ export default {
 <template>
   <Header msg="Spectral Front-End Assignment" />
   <main>
-    <SideBar :menuItemsTree="tree" />
+    <Sidebar :menuItemsTree="tree" />
     <router-view></router-view>
   </main>
 </template>

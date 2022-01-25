@@ -1,9 +1,9 @@
 <script>
 
 export default {
-  name: "SideBarNode",
+  name: "SidebarNode",
   props: {
-    node: {
+    tree: {
       type: Array,
       required: true
     }
@@ -22,12 +22,12 @@ export default {
 </script>
 
 <template>
-  <div v-for="item in node" :key="item.id">
-    <div class="sidebar__item">
-      <span class="sidebar__item-toggle" v-if="item.child && item.child.length" @click="toggle()">{{ isOpen ? '-' : '+' }}</span>
-      <router-link :to="{name: 'Page', params: {id: item.id}}" :name="item.name">{{ item.name }}</router-link>
+  <div v-for="node in tree" :key="node.id">
+    <div class="sidebar__item" data-test="sidebar-item">
+      <span class="sidebar__item-toggle" v-if="node.child && node.child.length" @click="toggle()">{{ isOpen ? '-' : '+' }}</span>
+      <router-link :to="{name: 'Page', params: {id: node.id}}" :name="node.name" data-test="link">{{ node.name }}</router-link>
     </div>
-    <SideBarNode v-if="item.child && item.child.length && isOpen" :node="item.child"/>
+    <SidebarNode v-if="node.child && node.child.length && isOpen" :tree="node.child" />
   </div>
 </template>
 
