@@ -2,7 +2,7 @@
   <div class="sidebar">
     <aside>
       <nav class="sidebar__content" role="navigation">
-        <SidebarNode :tree="menuItemsTree"></SidebarNode>
+        <SidebarNode :tree="tree"></SidebarNode>
       </nav>
     </aside>
   </div>
@@ -11,18 +11,19 @@
 <script>
 
 import SidebarNode from "../SidebarNode/index.vue";
+import { api } from "../../data/Api";
 
 export default {
   name: "Sidebar",
   components: {
     SidebarNode
   },
-  props: {
-    menuItemsTree: {
-      type: Array,
-      required: true
+  setup() {
+    const tree = api.getAssetsTree()
+    return {
+      tree,
     }
-  },
+  }
 }
 </script>
 

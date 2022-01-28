@@ -121,6 +121,103 @@ export const measurementsSet1 = [
 ]
 
 
+export const assetsSet2 = [
+  {
+    "id": 0,
+    "name": "Asset 0",
+    "parentId": null
+  },
+  {
+    "id": 5,
+    "name": "Asset 5",
+    "parentId": null
+  },
+  {
+    "id": 1,
+    "name": "Asset 1",
+    "parentId": 0
+  },
+  {
+    "id": 2,
+    "name": "Asset 2",
+    "parentId": 1
+  },
+  {
+    "id": 3,
+    "name": "Asset 3",
+    "parentId": 1
+  },
+  {
+    "id": 4,
+    "name": "Asset 4",
+    "parentId": 1
+  }
+]
+export const assetsSet2Tree = [
+  {
+    "id": 0,
+    "name": "Asset 0",
+    "parentId": 0,
+    child: [
+      {
+        "id": 1,
+        "name": "Asset 1",
+        "parentId": 0,
+        child: [
+          {
+            "id": 3,
+            "name": "Asset 3",
+            "parentId": 1
+          },
+          {
+            "id": 4,
+            "name": "Asset 4",
+            "parentId": 1
+          },
+          {
+            "id": 2,
+            "name": "Asset 2",
+            "parentId": 1
+          },
+        ]
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Asset 5",
+    "parentId": 0
+  },
+
+]
+export const measurementsSet2 = [
+  {
+    "assetId": 3,
+    "measurements": {
+      "2020-01-01T00:00:00.000Z": 156,
+      "2020-02-01T00:00:00.000Z": 123,
+      "2020-03-01T00:00:00.000Z": 128,
+    }
+  },
+  {
+    "assetId": 4,
+    "measurements": {
+      "2020-01-01T00:00:00.000Z": 141,
+      "2020-02-01T00:00:00.000Z": 125,
+      "2020-03-01T00:00:00.000Z": 113,
+    }
+  },
+  {
+    "assetId": 8,
+    "measurements": {
+      "2020-01-01T00:00:00.000Z": 142,
+      "2020-02-01T00:00:00.000Z": 164,
+      "2020-03-01T00:00:00.000Z": 112,
+    }
+  }
+]
+
+
 export const values1 = {
     "meterReadings": {
       "2020-01-01T00:00:00.000Z": 156 + 141 + 142,

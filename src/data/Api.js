@@ -72,7 +72,4 @@ export class Api {
 }
 
 
-// In order to change the data repository (e.g. with data coming from a REST API ),
-// Add the file in repository folder,
-// then inject your repository file here when creating your own instance like below
 export const api = new Api(new LoggerRepository(new LocalDataRepository()));

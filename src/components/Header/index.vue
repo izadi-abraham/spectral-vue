@@ -1,12 +1,21 @@
 <script>
+import ThemeToggle from "../ThemeToggle/index.vue"
 export default {
   name: "Header",
   props: {
     msg: {
       type: String,
-      required: true
+      default: ''
     },
-  }
+    showToggle: {
+      type: Boolean,
+      default: false
+    }
+  },
+  components: {
+    ThemeToggle
+  },
+
 };
 </script>
 
@@ -16,5 +25,6 @@ export default {
       <img alt="Vue logo" class="header__logo" src="../../assets/logo.png" width="55" height="55"/>
     </router-link>
     <h2 class="text-2xl text-gray-800">{{msg}}</h2>
+    <ThemeToggle v-if="showToggle"/>
   </header>
 </template>

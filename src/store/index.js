@@ -1,14 +1,11 @@
 import { createStore } from "vuex";
+import theme from "./modules/theme.js";
 
 export default createStore({
-  state: {
-    theme: 'light'
-  },
-  mutations: {
-    changeTheme () {
-      state.theme === 'light' ? state.theme = 'dark' : state.theme = 'light'
-    }
-  },
+  state: {},
+  mutations: {},
   actions: {},
-  modules: {},
+  modules: {
+    theme
+  },
 });
