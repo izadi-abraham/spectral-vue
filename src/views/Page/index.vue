@@ -26,17 +26,9 @@ export default {
 </script>
 
 <template>
-  <div class="page">
+  <div class="pt-6 px-4 w-full grid min-h-[calc(100vh-64px)]">
     <line-chart :seriesData="getValues" :categories="getDates"></line-chart>
-    <h5 v-if="getData.aggregated">This Asset has no data. Instead the sum of its children is used</h5>
+    <h5 class="pt-6" v-if="getData.aggregated">This Asset has no data. Instead the sum of its children is used</h5>
   </div>
 </template>
 
-<style scoped>
-.page {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-</style>

@@ -1,11 +1,12 @@
 <template>
-  <div class="sidebar">
-    <aside>
-      <nav class="sidebar__content" role="navigation">
+
+  <aside class="drop-shadow-md fixed dark:bg-gray-600 bg-gray-50 flex w-64 h-full z-20 top-0 left-0 pt-16">
+    <div class="flex flex-1 border-r dark:border-gray-400 border-gray-200 overflow-y-auto">
+      <nav class="w-full" role="navigation">
         <SidebarNode :tree="tree"></SidebarNode>
       </nav>
-    </aside>
-  </div>
+    </div>
+  </aside>
 </template>
 
 <script>
@@ -19,28 +20,10 @@ export default {
     SidebarNode
   },
   setup() {
-    const tree = api.getAssetsTree()
+    const tree = api.getAssetsTree();
     return {
-      tree,
-    }
+      tree
+    };
   }
-}
+};
 </script>
-
-<style scoped>
-
-.sidebar {
-  width: 300px;
-  position: fixed;
-  top: 100px;
-  left: 0;
-  height: 100vh;
-  z-index: 999;
-  background-color: #2b3940;
-  transition: width .3s;
-  box-sizing: border-box;
-  color: #f2f2f2;
-  font-size: 18px;
-}
-
-</style>

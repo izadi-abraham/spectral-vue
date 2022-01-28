@@ -5,23 +5,23 @@ export default {
   name: "LineChart",
   props: {
     seriesData: {
-      type: Array,
+      type: Array
     },
     categories: {
-      type: Array,
+      type: Array
     },
     chartTitle: {
       type: String,
-      default: 'test'
+      default: "test"
     },
     yAxisTitle: {
       type: String,
-      default: ''
+      default: ""
     }
   },
   components: {
-    Chart,
-  },
+    Chart
+  }
 };
 </script>
 
@@ -39,6 +39,7 @@ export default {
         categories: categories,
       },
       yAxis: {
+        className: 'highcharts-color-0',
         title: {
           text: yAxisTitle,
         },

@@ -1,4 +1,4 @@
-import ThemeToggle from '../../components/ThemeToggle';
+import ThemeToggle from '../../components/ToggleSwitch';
 import { action } from "@storybook/addon-actions";
 
 export default {
@@ -18,7 +18,7 @@ const Template = (args, { argTypes }) => ({
   setup() {
     return { args, /*toggleTheme: action('toggleTheme')*/ };
   },
-  template: '<ThemeToggle/>',
+  template: '<ToggleSwitch/>',
 });
 
 // export const LoggedIn = Template.bind({});

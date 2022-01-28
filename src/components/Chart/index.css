@@ -1,0 +1,11 @@
+.highcharts-background {
+    @apply dark:fill-gray-500
+}
+
+.highcharts-container text {
+    @apply dark:!fill-white
+}
+
+.highcharts-credits{
+    @apply hidden
+}

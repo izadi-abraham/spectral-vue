@@ -31,10 +31,12 @@ export default {
 
 
 <template>
-  <Header msg="Spectral Front-End Assignment" :show-toggle="true" />
-  <main class="min-h-screen bg-green-50 text-gray-700 dark:bg-gray-900 dark:text-purple-50">
+  <Header msg="Spectral Assignment" :show-toggle="true" />
+  <main class="text-gray-700 dark:bg-gray-500 dark:text-gray-50 flex overflow-hidden pt-16">
     <Sidebar />
-    <router-view></router-view>
+    <div class="h-full w-full relative overflow-y-auto ml-64">
+      <router-view></router-view>
+    </div>
   </main>
 </template>
 

@@ -1,7 +1,7 @@
 <template>
   <button
     @click="toggleTheme"
-    class="dark:text-red-400 text-cyan-200">
+    class="dark:text-gray-300 text-yellow-800">
     Theme Toggle
   </button>
 </template>
@@ -16,7 +16,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-
-</style>
