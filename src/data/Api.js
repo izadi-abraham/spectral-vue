@@ -7,23 +7,23 @@ export class Api {
   }
 
   getAssetsTree() {
-    return ((menuItems) => {
-      let output = [], array = [{ array: output, id: 0 }];
-      for (let item of menuItems) {
-        if (item.parentId === null)
-          item.parentId = 0;
-        let index = array.findIndex(arrayItem => {
-          return arrayItem.id === item.parentId;
-        });
-        if (!Array.isArray(array[index].array)) {
-          array[index].array = array[index].array.child = [];
-        }
-        let nv = Object.assign({}, item);
-        array[index].array.push(nv);
-        array[++index] = { array: nv, id: item.id };
+    const assets = this.dataRepository.getAssets();
+    let map = {}, roots = [], array = [];
+    for (let i = 0; i < assets.length; i++) {
+      map[assets[i].id] = i;
+      array[i] = { ...assets[i] };
+    }
+    for (const node of array) {
+      if (node.parentId !== null) {
+        const parentIndex = map[node.parentId];
+        if (!array[parentIndex].child)
+          array[parentIndex].child = [];
+        array[parentIndex].child.push(node);
+      } else {
+        roots.push(node);
       }
-      return output;
-    })(this.dataRepository.getAssets());
+    }
+    return roots;
   }
 
   getMeasurements(id) {
@@ -51,7 +51,7 @@ export class Api {
       const asset = findAssetById(assetsTree, id);
 
       if (asset === null) return {
-        meterReadings: {}, aggregated: false, error: "not found"
+        meterReadings: {}, aggregated: false, error: true
       };
 
       const values = asset.child.map((child) => findMeasurements(assetsTree, measurementsMap, child.id));

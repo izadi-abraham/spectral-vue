@@ -2,37 +2,6 @@ import assets from "../../data/localData/assets.json"
 
 
 export const defaultAssets = assets
-export const defaultAssetsTree = [
-  {
-    "id": 0,
-    "name": "Asset 0",
-    "parentId": 0
-  },
-  {
-    "id": 1,
-    "name": "Asset 1",
-    "parentId": 0,
-    child: [
-      {
-        "id": 2,
-        "name": "Asset 2",
-        "parentId": 1
-      },
-      {
-        "id": 3,
-        "name": "Asset 3",
-        "parentId": 1,
-        child: [
-          {
-            "id": 4,
-            "name": "Asset 4",
-            "parentId": 3
-          }
-        ]
-      },
-    ]
-  },
-]
 
 export const assetsSet1 = [
   {
@@ -65,7 +34,7 @@ export const assetsSet1Tree = [
   {
     "id": 1,
     "name": "Asset 1",
-    "parentId": 0,
+    "parentId": null,
     child: [
       {
         "id": 2,
@@ -157,13 +126,18 @@ export const assetsSet2Tree = [
   {
     "id": 0,
     "name": "Asset 0",
-    "parentId": 0,
+    "parentId": null,
     child: [
       {
         "id": 1,
         "name": "Asset 1",
         "parentId": 0,
         child: [
+          {
+            "id": 2,
+            "name": "Asset 2",
+            "parentId": 1
+          },
           {
             "id": 3,
             "name": "Asset 3",
@@ -174,11 +148,6 @@ export const assetsSet2Tree = [
             "name": "Asset 4",
             "parentId": 1
           },
-          {
-            "id": 2,
-            "name": "Asset 2",
-            "parentId": 1
-          },
         ]
       }
     ]
@@ -186,7 +155,7 @@ export const assetsSet2Tree = [
   {
     "id": 5,
     "name": "Asset 5",
-    "parentId": 0
+    "parentId": null
   },
 
 ]
@@ -220,9 +189,9 @@ export const measurementsSet2 = [
 
 export const values1 = {
     "meterReadings": {
-      "2020-01-01T00:00:00.000Z": 156 + 141 + 142,
-      "2020-02-01T00:00:00.000Z": 123 + 125 + 164,
-      "2020-03-01T00:00:00.000Z": 128 + 113 + 112,
+      "2020-01-01T00:00:00.000Z": 439,
+      "2020-02-01T00:00:00.000Z": 412,
+      "2020-03-01T00:00:00.000Z": 353,
     },
     "aggregated": true
   }
@@ -234,14 +203,6 @@ export const values2 = {
     },
     "aggregated": true
   }
-export const values8 = {
-    "meterReadings": {
-      "2020-01-01T00:00:00.000Z": 142,
-      "2020-02-01T00:00:00.000Z": 164,
-      "2020-03-01T00:00:00.000Z": 112,
-    },
-    "aggregated": false
-  }
 export const values3 = {
   "meterReadings": {
     "2020-01-01T00:00:00.000Z": 156,
@@ -250,11 +211,19 @@ export const values3 = {
   },
   "aggregated": false
 }
+export const values8 = {
+    "meterReadings": {
+      "2020-01-01T00:00:00.000Z": 142,
+      "2020-02-01T00:00:00.000Z": 164,
+      "2020-03-01T00:00:00.000Z": 112,
+    },
+    "aggregated": false
+  }
 
 export const errorValues = {
   "meterReadings": {},
   "aggregated": false,
-  "error": "not found"
+  "error": true
 }
 
 export const measurements1 = {

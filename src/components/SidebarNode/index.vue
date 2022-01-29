@@ -7,10 +7,6 @@ export default {
     tree: {
       type: Array,
       required: true
-    },
-    childClass:{
-      type:String,
-      default:''
     }
   },
   data: function() {
@@ -27,15 +23,12 @@ export default {
     MinusIcon,
     PlusIcon
   },
-  setup(props){
-    console.log(props.childClass)
-  }
 
 };
 </script>
 
 <template>
-  <div v-for="(node) in tree" :key="node.id">
+  <div v-for="node in tree" :key="node.id">
     <div class="h-12 font-normal transition text-gray-800 hover:text-gray-500 hover:font-bold flex justify-between items-center w-full pl-4"
       data-test="sidebar-item">
       <router-link active-class="font-bold text-yellow-600 dark:text-yellow-500" class="py-4 w-full text-left dark:text-gray-300 dark:hover:text-gray-200" :to="{name: 'Page', params: {id: node.id}}" :name="node.name" data-test="link">

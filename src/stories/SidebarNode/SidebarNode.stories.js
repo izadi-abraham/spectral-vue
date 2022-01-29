@@ -1,45 +1,19 @@
 import SidebarNode from '../../components/SidebarNode';
+import { tree, treeWithChild } from '../assets/constants'
 
 export default {
   title: 'SidebarNode',
   component: SidebarNode,
 };
 
-const tree = [
-  {
-    "id": 0,
-    "name": "Asset 0",
-    "parentId": 0
-  },
-  {
-    "id": 1,
-    "name": "Asset 1",
-    "parentId": 0
-  }
-]
-
-const treeWithChild = [
-  {
-    "id": 0,
-    "name": "Asset 0",
-    "parentId": 0,
-    child: [
-      {
-        "id": 1,
-        "name": "Asset 1",
-        "parentId": 0,
-      }
-    ]
-  }
-]
 
 
 const Template = (args) => ({
   components: { SidebarNode },
   setup() {
-    return { args, };
+    return { args };
   },
-  template: '<SidebarNode :tree="args.tree"/>',
+  template: '<div class="w-64"><SidebarNode :tree="args.tree"/></div>',
 });
 
 export const Default = Template.bind({});

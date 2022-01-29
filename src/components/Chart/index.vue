@@ -12,16 +12,28 @@ export default {
     },
     chartTitle: {
       type: String,
-      default: "test"
+      default: "Asset's Data"
     },
     yAxisTitle: {
       type: String,
       default: ""
+    },
+    aggregated: {
+      type: Boolean
+    },
+    noData: {
+      type: Boolean
     }
   },
   components: {
     Chart
-  }
+  },
+  computed: {
+    getTitle() {
+      const aggregatedMessage = "This Asset has no data. Instead the sum of its children is used";
+      return  this.aggregated ? aggregatedMessage : this.noData ? "No data found" : this.chartTitle;
+    }
+  },
 };
 </script>
 
@@ -33,13 +45,12 @@ export default {
         type: 'line',
       },
       title: {
-        text: chartTitle,
+        text: getTitle,
       },
       xAxis: {
         categories: categories,
       },
       yAxis: {
-        className: 'highcharts-color-0',
         title: {
           text: yAxisTitle,
         },
