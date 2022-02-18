@@ -1,5 +1,9 @@
 # spectral-app
 
+#### This project was an assignment in an interview process - Feb 2022, in 2 weeks implemented a Vue3 app without any prior knowledge of Vuejs.
+#### Kindly as below you can find more details.
+
+
 ## Project structure
 
     .
